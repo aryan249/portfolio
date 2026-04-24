@@ -149,31 +149,30 @@
     50% { opacity: 0.4; transform: scale(0.8); }
   }
 
-  h1 {
+h1 {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--heading);
-  margin-bottom: 1.5rem;
-  overflow: visible; /* Crucial: allows the 'g' to bleed out if needed */
+  margin-bottom: 1.2rem;
+  overflow: visible; /* Prevents any parent from cutting off the letter */
   display: block;
   animation: fadeUp 0.7s 0.1s ease both;
 }
 
 h1 .line2 {
-  display: inline-block;
-  padding-bottom: 0.2em; /* This creates safe physical space for the 'g' tail */
-  margin-bottom: -0.2em; /* This pulls the description back up so the gap isn't huge */
-  vertical-align: middle;
+  display: inline-block;  /* Required to apply vertical padding */
+  padding-bottom: 0.25em; /* This is the extra space for the 'g' tail */
+  margin-bottom: -0.25em; /* Pulls the description back up to fix the layout */
+  vertical-align: top;
 }
 
 h1 .accent {
   color: var(--accent);
-  display: inline; /* Keeps it as a text character, not a box */
+  display: inline;       /* Ensures the period stays as text, not a box */
 }
-
 
   .hero-desc {
     max-width: 580px;
