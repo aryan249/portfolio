@@ -149,17 +149,21 @@
     50% { opacity: 0.4; transform: scale(0.8); }
   }
 
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
-    line-height: 1.2; /* Increased to fix descender clipping */
-    letter-spacing: -0.03em;
-    color: var(--heading);
-    margin-bottom: 1rem;
-    overflow: visible; /* Ensure nothing is cut off */
-    animation: fadeUp 0.7s 0.1s ease both;
-  }
+ h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.2; /* Increased from 1.05 to give the 'g' more room */
+  letter-spacing: -0.03em;
+  color: var(--heading);
+  margin-bottom: 1rem;
+  
+  /* CRITICAL FIXES */
+  overflow: visible;      /* Prevents the container from clipping the tail */
+  padding-bottom: 0.15em; /* Adds a tiny bit of internal space for the descender */
+  display: block;         /* Ensures it behaves as a full block container */
+  animation: fadeUp 0.7s 0.1s ease both;
+}
   h1 .accent { color: var(--accent); }
   h1 .line2 {
     display: block;
