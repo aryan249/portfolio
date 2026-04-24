@@ -153,11 +153,11 @@
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: clamp(2rem, 4.5vw, 3.5rem);
-    line-height: 1.05;
+    line-height: 1.2; /* Increased to fix descender clipping */
     letter-spacing: -0.03em;
     color: var(--heading);
     margin-bottom: 1rem;
-    padding-bottom: 0.1em; /* Fixed descender clipping for 'g' */
+    overflow: visible; /* Ensure nothing is cut off */
     animation: fadeUp 0.7s 0.1s ease both;
   }
   h1 .accent { color: var(--accent); }
