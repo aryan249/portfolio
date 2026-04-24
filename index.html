@@ -143,24 +143,24 @@
     50% { opacity: 0.4; transform: scale(0.8); }
   }
 
-  /* ── FIXED H1: descenders no longer clipped ── */
+  /* ── FIXED H1: second line gets its own descender room ── */
   h1 {
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    line-height: 1.15;        /* a touch more room for descenders */
+    line-height: 1.02;
     letter-spacing: -0.03em;
     color: var(--heading);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.15em;   /* breathing room below baseline so 'g' tail isn't cramped */
+    margin-bottom: 1.75rem;
     overflow: visible;
     display: block;
     animation: fadeUp 0.7s 0.1s ease both;
   }
   h1 .line2 {
-    display: inline-block;
-    /* removed negative margin hack — simply allow normal flow */
-    vertical-align: baseline;
+    display: block;
+    line-height: 1.08;
+    padding-bottom: 0.22em;
+    margin-top: 0.02em;
   }
   h1 .accent { color: var(--accent); display: inline; }
 
